@@ -1,0 +1,104 @@
+
+/*
+    ============
+        Logo    
+    ============
+*/
+    .logo {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20px;
+    }
+
+
+
+/*
+    ============================
+        Secondary Navigation    
+    ============================
+*/
+
+    .sub-nav-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1 0 75%;
+    }
+
+    .sub-nav {
+        display: flex;
+        flex: 1 0 100%;
+        float: right;        
+    }
+
+    .sub-nav ul {
+        float: right;
+    }
+
+    .sub-nav a {
+        padding: 8px 10px 8px 10px;
+        margin: 5px;
+        display: block;
+        text-decoration-line: none;
+        text-align: center;
+        color: #0D9C1F;
+    }
+
+    .sub-nav .btn-primary {
+        border-radius: 2px;
+        border: 1px solid #0D9C1F;
+    }
+
+    .searchform {
+        display: flex;
+        flex: 1 0 100%;
+        align-items: center;
+        border: 2px solid #d8dce0;
+        border-radius: 2px;
+        height: 40px;
+    }
+
+    .searchform .searchform-text {
+        flex: 1 0 auto;
+        border: none;
+    }
+
+    .searchform .searchform-btn {
+        height: 24px;
+        width: 24px;
+        background-image: url(https://via.placeholder.com/100x70);
+        border: none;
+    }
+/*
+    =========================
+        Main Navigation         
+    =========================
+*/
+
+    .main-nav {
+        flex: 1 0 100%;
+    }
+
+    .main-nav ul, .sub-nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
+
+    .main-nav ul {
+        border-radius: 5px;
+        background-color: #2f3336;
+    }
+
+    .main-nav li {
+        flex: 1 0 auto;
+    }
+
+    .main-nav ul li a {
+        display: block;
+        padding: 20px 10px 20px 10px;
+        border-right: 1px solid #ffffff;
+        text-decoration-line: none;
+        color: #ffffff;
+        text-align: center;
+    }

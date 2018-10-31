@@ -1,0 +1,44 @@
+    .footer {
+        background-color: #2acc45;
+        width: 100%;
+    }
+
+    .footer .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        width: 60%;
+        margin: auto;
+    }
+
+    .footer .wrapper .container {
+        flex: 1 0 50%;
+        width: 50%;
+        margin: 30px auto 30px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        height: 270px;
+    }
+
+    .footer .wrapper .container .map {
+        width: 270px;
+        flex: 1 0 50%;
+    }
+
+    .footer .wrapper .container p2, .footer .wrapper .container h2 {
+        max-width: 45%;
+        height: 20px;
+        margin-top: 15px;
+    }
+
+    .footer .wrapper p1 {
+        flex: 1 0 100%;
+        text-align: center;
+    }
+
+    .footer .wrapper .info {
+        width: 100%;
+        border-top: 1px;
+        border-top-color: #ffffff;
+        margin: 50px auto;
+    }
