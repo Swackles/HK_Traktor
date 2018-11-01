@@ -1,7 +1,11 @@
-﻿doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/main.css')
+    title My Site - #{title}
+    block scripts
+      script(src='/jquery.js')
   body
-    block content
+    main()
+      block content
+
+      footer()
+        block foot

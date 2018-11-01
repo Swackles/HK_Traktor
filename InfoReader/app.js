@@ -23,8 +23,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.static('public'));
 
+// XX dir
 app.get('/traktor', (req, res, next) => {
-    res.sendFile(__dirname + '\\1. kodutöö\\index.html');
+    res.sendFile(__dirname + '\\views\\traktor.html');
+});
+
+app.get('/tetris', (req, res, next) => {
+    res.render('tetris', {title: "Tetris"});
 });
 
 // catch 404 and forward to error handler
