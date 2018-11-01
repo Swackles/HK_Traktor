@@ -41,6 +41,6 @@ app.use(function (req, res, next) {
 
 // error handlers
 
-var server = app.listen(80, function () {
+var server = app.listen(80, () => {
     debug('Express server listening on port ' + server.address().port);
 });
