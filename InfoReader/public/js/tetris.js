@@ -1,3 +1,6 @@
+let gameInterval = null;
+let timer = 1000;
+
 function drawMap() {
     game = JSON.parse(sessionStorage.getItem("game"));
 
@@ -51,10 +54,9 @@ function drawMap() {
     }
 }
 
-//Start the game
-function gameStart() {
-    window.setInterval(() => {
-        game = JSON.parse(sessionStorage.getItem("game"));
+let move = {
+    down() {
+        let game = JSON.parse(sessionStorage.getItem("game"));
 
         if (game.height == 0) {
                 
@@ -74,11 +76,67 @@ function gameStart() {
             }
 
             game.player.reverse();
-            if (game.player != JSON.parse(sessionStorage.getItem("game").player)) return;
             window.sessionStorage.setItem("game", JSON.stringify(game));
         }
+    },
 
-    }, 1000);
+
+
+
+
+
+    right() {
+        try {
+            let game = JSON.parse(sessionStorage.getItem("game"));
+
+            for(let i = 0; i < game.queue[0].length; i++) {
+                
+                if (String(game.queue[0][i]).split("")[String(game.queue[0][i]).length - 1] == 1) throw new Error();
+
+                game.queue[0][i] = parseInt(String(game.queue[0][i]).substr(0, String(game.queue[0][i]).length - 1));
+            }
+
+            for(let i = 0; i < game.player.length; i++) {
+                
+                if (String(game.player[i]).split("")[String(game.player[i]).length - 1] == 1) throw new Error();
+
+                game.player[i] = parseInt(String(game.player[i]).substr(0, String(game.player[i]).length - 1));
+            }
+
+            window.sessionStorage.setItem("game", JSON.stringify(game));
+        } catch { }
+    },
+
+
+    left() {
+        try {
+            let game = JSON.parse(sessionStorage.getItem("game"));
+
+            for(let i = 0; i < game.queue[0][i]; i++) {
+        
+                if (String(game.queue[0][i]).length == 10) throw new Error();
+
+                game.queue[0][i] = parseInt(String(game.queue[0][i])+ "0");
+            }
+
+            for(let i = 0; i < game.player.length; i++) {
+        
+                if (String(game.player[i]).length == 10) throw new Error();
+
+                game.player[i] = parseInt(String(game.player[i])+ "0");
+            }
+
+            window.sessionStorage.setItem("game", JSON.stringify(game));
+        } catch { }
+    }
+}
+
+//Start the game
+function gameStart() {
+    gameInterval = setInterval(() => {
+        console.log("down");
+        move.down();
+    }, timer);
 }
 
 window.onload = () => {
@@ -126,27 +184,15 @@ document.onkeydown = (event) => {
     
     switch(event.key) {
         case "a" || "ArrowLeft":
-            try {
-                for(let i = 0; i < game.player.length; i++) {
-            
-                    if (String(game.player[i]).length == 10) throw new Error();
-
-                    game.player[i] = parseInt(String(game.player[i])+ "0");
-                }
-                window.sessionStorage.setItem("game", JSON.stringify(game));
-            } catch {}
+            console.log("left");
+            move.left();
             break;
         
         case "d" || "ArrowRight":
-            try {
-                for(let i = 0; i < game.player.length; i++) {
-                    
-                    if (String(game.player[i]).split("")[String(game.player[i]).length - 1] == 1) throw new Error();
-
-                    game.player[i] = parseInt(String(game.player[i]).substr(0, String(game.player[i]).length - 1));
-                }
-                window.sessionStorage.setItem("game", JSON.stringify(game));
-            } catch {}
+            move.right();
+            break;
+        case "s" || "ArrowDown":
+            move.down();
             break;
     }
 }

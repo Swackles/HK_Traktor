@@ -25,7 +25,7 @@ app.use(express.static('public'));
 
 // XX dir
 app.get('/traktor', (req, res, next) => {
-    res.sendFile(__dirname + '\\views\\traktor.html');
+    res.sendFile(__dirname + '/views/traktor.html');
 });
 
 app.get('/tetris', (req, res, next) => {
@@ -41,6 +41,10 @@ app.use(function (req, res, next) {
 
 // error handlers
 
-var server = app.listen(80, () => {
+app.set('port', process.env.PORT || 3000);
+
+var server = app.listen(app.get('port'), () => {
     debug('Express server listening on port ' + server.address().port);
 });
+
+console.log(server.address().port);
