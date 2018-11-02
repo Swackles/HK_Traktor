@@ -1,0 +1,17 @@
+extends layout-traktor
+
+block scripts
+    script(src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js")
+    script(src="js/login.js")
+
+block css
+  link(rel="stylesheet" href="css/login.css")
+
+block main
+  form#login(action="#")
+    input(placeholder="kasutajanimi" type="text" name="username")
+    br
+    input(placeholder="parool" type="password" name="password")
+    br
+    br
+    input(type="submit" value="Submit")

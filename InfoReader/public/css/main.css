@@ -8,7 +8,8 @@ body {
 
 .header {
     width: 60%;
-    max-width: 1200%;
+    max-width: 1200px;
+    min-width: 1200px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -19,7 +20,7 @@ body {
     margin: -30px auto 0px auto;
 }
 
-.h1, h2, p1, p2, a {
+h1, h2, p1, p2, a {
     font-family: Arial, Helvetica, sans-serif;
     color: #ffffff;
 }

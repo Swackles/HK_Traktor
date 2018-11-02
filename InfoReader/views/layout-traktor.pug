@@ -1,0 +1,65 @@
+html
+  head
+
+    title #{title}
+    meta(charset="UTF-8")
+
+    block css
+    
+    link(rel="stylesheet" href="css/footer.css")
+    link(rel="stylesheet" href="css/main.css")
+    link(rel="stylesheet" href="css/header.css")
+
+    block scripts
+      script(src='/jquery.js')
+  
+  body
+    div(class="wrapper")
+      header(class="header")        
+        img(class="logo" src="https://via.placeholder.com/100x70")
+        div(class="sub-nav-wrap")
+          nav(class="sub-nav")
+            ul
+              li
+                a(class="btn btn-link" href="#") Registreeru
+              li
+                a(class="btn btn-primary" href="#") Login
+        
+          form(role="search" class="searchform")
+              input(type="text" class="searchform-text" placeholder="Sisesta tootekood või toote nimi" name="search")
+              button(type="submit" class="searchform-btn" name="submit")
+        
+        nav(class="main-nav")
+            ul
+              each item in Products
+                li
+                  a(class="nav-btn" href="#")= item.name
+
+      main(class="main")
+        block main
+
+      footer(class="footer")
+        div(class="wrapper")
+          div(class="container")
+            img(class="map" src="https://via.placeholder.com/280x280")
+            h2
+              bold Türi
+            p2 Tehnika 6D, Türi vald, 72240 Järvamaa
+            p2 E-R 8:00-17:00
+            p2 L-P suletud
+            p2 tel: +372 38 47 215
+            p2 mob: +372 53 489 208
+
+          div(class="container")
+            img(class="map" src="https://via.placeholder.com/280x280")
+            h2
+              bold Saue
+            p2 Pärnasalu 31 (sisehoovis), Saue 76505 Harjumaa
+            p2 E-R 8:00-17:00
+            p2 L-P suletud
+            p2 tel: +372 65 96 128
+            p2 mob: +372 51 85 737
+
+          p1(class="info")
+            bold Agromarket AS
+            | Tehnika 6D, Türi vald, 72240 Järvamaa, tel: +372 38 47 215, info@agromarket.ee

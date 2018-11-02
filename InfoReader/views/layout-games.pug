@@ -1,0 +1,14 @@
+html
+  head
+    title #{title}
+
+    block css
+
+    block scripts
+      script(src='/jquery.js')
+  body
+    main()
+      block content
+
+      footer()
+        block foot

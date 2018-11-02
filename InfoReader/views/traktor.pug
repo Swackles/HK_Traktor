@@ -1,0 +1,26 @@
+﻿extends layout-traktor
+
+block css
+    link(rel="stylesheet" href="css/content.css")
+
+block main
+    div(class="news")
+        div(class="container")
+            h1 Belarus traktorite varuosade müük
+            p1 Juba 20 aastat!
+
+            img(class="main-img-front" src="https://via.placeholder.com/500x500")
+
+    div(class="product")
+        div(class="wrapper")
+            each item in Products                
+                div(class="container")
+                    img(class="product-img" src="https://via.placeholder.com/180x180")
+                    a(class="nav-btn" href="#")= item.name
+
+                    each menuItem in item.menu
+                        p1= menuItem
+
+        form(role="search" class="searchform")
+            input(type="text" class="searchform-text" placeholder="Sisesta tootekood või toote nimi" name="search")
+            button(type="submit" class="searchform-btn" name="submit")
