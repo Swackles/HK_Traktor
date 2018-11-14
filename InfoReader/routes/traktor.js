@@ -32,8 +32,16 @@ router.get("/", (req, res, next) => {
     res.render('traktor', {title: "Traktor", Products: productList});
 });
 
-router.get("/login", (req, res, next) => {
-    res.render('login', {title: "Traktor-login", Products: productList});
+router.post("/login", (req, res, next) => {
+    mysql.confirmUser(req.body, (result) => {
+
+        console.log("recived");
+        if (result.length >= 1) {
+            res.status(200).send();
+        } else {
+            res.status(401).send();
+        }
+    });    
 });
 
 module.exports = router;

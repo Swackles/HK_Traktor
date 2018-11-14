@@ -1,6 +1,6 @@
 exports.mysql = {
-    host: "",
+    host: "localhost",
     user: "",
     password: "",
-    database: ""
+    database: "hk_traktor"
 }

@@ -11,7 +11,9 @@ html
     link(rel="stylesheet" href="css/header.css")
 
     block scripts
-      script(src='/jquery.js')
+      script(src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js")
+      script(src="https://unpkg.com/sweetalert/dist/sweetalert.min.js")
+      script(src="js/login.js")
   
   body
     div(class="wrapper")
@@ -22,8 +24,8 @@ html
             ul
               li
                 a(class="btn btn-link" href="#") Registreeru
-              li
-                a(class="btn btn-primary" href="#") Login
+              li#login
+                a(onclick="login()"  class="btn btn-primary" href="#") Login
         
           form(role="search" class="searchform")
               input(type="text" class="searchform-text" placeholder="Sisesta tootekood või toote nimi" name="search")

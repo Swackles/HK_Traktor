@@ -31,22 +31,31 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="mysql.js" />
+    <Compile Include="public\js\login.js" />
+    <Compile Include="public\js\tetris.js" />
+    <Compile Include="routes\traktor.js" />
+    <Compile Include="settings.js" />
     <Content Include="package.json" />
+    <Content Include="public\css\404.css" />
     <Content Include="public\css\content.css" />
     <Content Include="public\css\footer.css" />
     <Content Include="public\css\header.css" />
+    <Content Include="public\css\login.css" />
     <Content Include="public\css\main.css" />
     <Content Include="README.md" />
-    <Content Include="views\index.html" />
-    <Content Include="views\index.pug" />
-    <Content Include="views\layout.pug" />
-    <Content Include="views\error.pug" />
+    <Content Include="views\404.pug" />
+    <Content Include="views\layout-games.pug" />
+    <Content Include="views\layout-traktor.pug" />
+    <Content Include="views\login.pug" />
+    <Content Include="views\tetris.pug" />
+    <Content Include="views\traktor.pug" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="public\" />
     <Folder Include="public\images\" />
-    <Folder Include="public\javascripts\" />
     <Folder Include="public\css\" />
+    <Folder Include="public\js\" />
     <Folder Include="routes\" />
     <Folder Include="views\" />
   </ItemGroup>
